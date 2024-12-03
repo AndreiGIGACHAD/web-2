@@ -1,7 +1,9 @@
+/* Устанавливает базовые параметры для html и body, убирает отступы */
 html, body {
   margin: 0;
   padding: 0;
 }
+/* Основной контейнер приложения, выводится на весь экран */
 
 .App {
   display: flex;
@@ -17,6 +19,7 @@ html, body {
   padding: 10px;
   box-sizing: border-box;
 }
+/* Кнопка для добавления новой записи */
 
 .add-note-btn {
   width: 100%;
@@ -29,6 +32,7 @@ html, body {
   border-radius: 4px;
   margin-bottom: 10px;
 }
+/* Поле поиска в списке записей */
 
 .search-input {
   width: 96.5%;
@@ -39,12 +43,14 @@ html, body {
   border: 1px solid #ccc;
   border-radius: 4px;
 }
+/* Список записей */
 
 .notes-list {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
+/* Отдельная запись */
 
 .note-item {
   display: flex;
@@ -59,11 +65,13 @@ html, body {
   border-radius: 4px;
   transition: background-color 0.2s;
 }
+/* Активная запись */
 
 .note-item.active {
   background-color: #525252;
   color: white;
 }
+/* Кнопка удаления записи */
 
 .delete-btn {
   background-color: red;
@@ -82,6 +90,7 @@ html, body {
   box-sizing: border-box;
   background-color: #424242;
 }
+/* Текстовая область для редактирования записи */
 
 textarea {
   width: 100%;
@@ -91,6 +100,7 @@ textarea {
   background-color: #2f2f2f;
   box-sizing: border-box;
 }
+/* Текст, отображаемый, если записи не выбраны */
 
 .no-note-text {
   color: #999;

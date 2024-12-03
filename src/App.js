@@ -2,25 +2,35 @@ import React, { useState } from 'react';
 import './App.css';
 
 const App = () => {
+  // Состояние для записей
+
   const [notes, setNotes] = useState([]);
+    // Состояние для ID выбранной записи
+
   const [selectedNoteId, setSelectedNoteId] = useState(null);
+    // Состояние для строки поиска
+
   const [searchQuery, setSearchQuery] = useState('');
+
+  // Добавление новой записи
 
   const addNote = () => {
     const newNote = {
       id: Date.now(),
       text: '',
     };
-    setNotes([...notes, newNote]);
-    setSelectedNoteId(newNote.id);
+    setNotes([...notes, newNote]); // Добавляем новую запись
+    setSelectedNoteId(newNote.id); // Выбираем новую запись
   };
+  // Удаление записи
 
   const deleteNote = (id) => {
-    setNotes(notes.filter((note) => note.id !== id));
+    setNotes(notes.filter((note) => note.id !== id));/ Фильтруем список
     if (selectedNoteId === id) {
       setSelectedNoteId(null);
     }
   };
+  // Обновление текста выбранной записи
 
   const updateNoteText = (text) => {
     setNotes(
@@ -29,11 +39,14 @@ const App = () => {
       )
     );
   };
+  // Получение текста выбранной записи
 
   const getSelectedNoteText = () => {
     const selectedNote = notes.find((note) => note.id === selectedNoteId);
     return selectedNote ? selectedNote.text : '';
   };
+
+  // Фильтрация записей по поисковому запросу
 
   const filteredNotes = notes.filter((note) =>
     note.text.toLowerCase().includes(searchQuery.toLowerCase())
